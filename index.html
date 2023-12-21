@@ -11,7 +11,6 @@
         }
 
         .bg-image {
-            background-image: url('./cts.webp');
             height: 100%;
             background-position: center;
             background-repeat: no-repeat;
@@ -21,5 +20,17 @@
 </head>
 <body>
 <div class="bg-image"></div>
+<script>
+function showTheRightBackgroundOnTheRightDevice() {
+    let isPortrait = window.matchMedia("(orientation: portrait)").matches;
+    let backgroundImage = isPortrait ? './cts-portrait.webp' : './cts.webp';
+    document.querySelector('.bg-image').style.backgroundImage = `url('${backgroundImage}')`;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    showTheRightBackgroundOnTheRightDevice();
+    window.addEventListener("resize", showTheRightBackgroundOnTheRightDevice);
+});
+</script>
 </body>
 </html>
