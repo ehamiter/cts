@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Chimera Tier Software</title>
-    <link rel="shortcut icon" href="./favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="web, software, ai, Python, DALL-E, ChatGPT, art, calendar, cat, Hobbes, GPT-4, GPT-4-turbo, gpt-4-1106-preview, dall-e-3">
+    <meta name="author" content="Chimera Tier">
+    <link rel="apple-touch-icon" sizes="180x180" href="./static/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./static/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./static/images/icons/favicon-16x16.png">
+    <link rel="shortcut icon" href="./static/images/icons/favicon.ico">
+    <link rel="manifest" href="./static/site.webmanifest">
     <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            background-color: #d9cebb;
-        }
-
-        .bg-image {
-            height: 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
-        }
+      body, html {
+        height: 100%;
+        margin: 0;
+        background-color: #d9cebb;
+      }
+      .bg-image {
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
     </style>
-</head>
-<body>
-<div class="bg-image"></div>
-<script>
-function showTheRightBackgroundOnTheRightDevice() {
-    let isPortrait = window.matchMedia("(orientation: portrait)").matches;
-    let backgroundImage = isPortrait ? './cts-portrait.webp' : './cts.webp';
-    document.querySelector('.bg-image').style.backgroundImage = `url('${backgroundImage}')`;
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    showTheRightBackgroundOnTheRightDevice();
-    window.addEventListener("resize", showTheRightBackgroundOnTheRightDevice);
-});
-</script>
-</body>
+  </head>
+  <body>
+    <div class="bg-image"></div>
+    <script>
+    function showTheRightBackgroundOnTheRightDevice() {
+      let isPortrait = window.matchMedia("(orientation: portrait)").matches;
+      let backgroundImage = isPortrait ? './static/images/cts-portrait.webp' : './static/images/cts.webp';
+      document.querySelector('.bg-image').style.backgroundImage = `url('${backgroundImage}')`;
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      showTheRightBackgroundOnTheRightDevice();
+      window.addEventListener("resize", showTheRightBackgroundOnTheRightDevice);
+    });
+    </script>
+  </body>
 </html>
